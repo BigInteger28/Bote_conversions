@@ -19,6 +19,11 @@ func main() {
 	// Create a scanner to read the file line by line
 	scanner := bufio.NewScanner(file)
 
+	// Skip the first line if it exists
+	if scanner.Scan() {
+		// First line is ignored
+	}
+
 	for scanner.Scan() {
 		line := scanner.Text()
 
