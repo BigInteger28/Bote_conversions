@@ -44,7 +44,18 @@ func main() {
 		}
 
 		// Get the required characters: 3, 6, 9, and 12
-		result := string(content[2]) + string(content[5]) + string(content[8]) + string(content[11])
+		var result string
+		if string(content[2]) == "5" {
+			result = string(content[1]) + string(content[5]) + string(content[8]) + string(content[11])
+		} else if string(content[5]) == "5" {
+			result = string(content[2]) + string(content[4]) + string(content[8]) + string(content[11])
+		} else if string(content[8]) == "5" {
+			result = string(content[2]) + string(content[5]) + string(content[7]) + string(content[11])
+		} else if string(content[11]) == "5" {
+			result = string(content[2]) + string(content[5]) + string(content[8]) + string(content[10])
+		} else {
+			result = string(content[2]) + string(content[5]) + string(content[8]) + string(content[11])
+		}
 
 		// Append the result to the original line and print
 		newLine := fmt.Sprintf("%s%s", line, result)
